@@ -11,9 +11,10 @@ class Program
         // Skapa en konsolapplikation som konverterar en summa pengar från en valuta till en annan. Inkludera typkonverteringar, operatörer och kontrollflöde.
         // Instruktioner:
         Console.WriteLine("Welcome to currency exchange");
+
         // Be användaren att ange en summa pengar i SEK.
         Console.WriteLine("Please enter amount in SEK you want to exchange:");
-        double inputCurrency = double.Parse(Console.ReadLine()!);
+        decimal inputCurrency = decimal.Parse(Console.ReadLine()!);
 
         // Ange en lista över tillgängliga valutor (t.ex. EUR, GBP, JPY,USD).
         Console.WriteLine("Choose which currency you want to exchange to:");
@@ -24,24 +25,24 @@ class Program
         string chosenCurrency = (Console.ReadLine()!).ToUpper();
 
         // Använd en switch-sats för att hantera valutaomvandlingen.
-        double exchangeCurrency;
+        decimal exchangeCurrency;
         switch (chosenCurrency)
         // Utför omvandlingen med multiplikationsoperatorer och skriv gjutning vid behov.
             {
                 case "EUR":
-                    exchangeCurrency = inputCurrency * 0.092;
+                    exchangeCurrency = inputCurrency * 0.092m;
                     break;
                 
                 case "GBP":
-                    exchangeCurrency = inputCurrency * 0.079;
+                    exchangeCurrency = inputCurrency * 0.079m;
                     break;
                 
                 case "JPY":
-                    exchangeCurrency = inputCurrency * 15.7;
+                    exchangeCurrency = inputCurrency * 15.7m;
                     break;
 
                 case "USD":
-                    exchangeCurrency = inputCurrency * 0.099;
+                    exchangeCurrency = inputCurrency * 0.099m;
                     break;
                 
                 default:
@@ -49,7 +50,7 @@ class Program
                     return;
                 }
                 // Visa det konverterade beloppet.
-            Console.WriteLine($"Your currency {inputCurrency} SEK will be {exchangeCurrency}{chosenCurrency}");
+            Console.WriteLine($"Your currency {inputCurrency}SEK is {exchangeCurrency}{chosenCurrency}");
 
             Console.ReadLine();
     }
