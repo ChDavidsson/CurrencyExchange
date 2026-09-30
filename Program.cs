@@ -14,7 +14,7 @@ class Program
 
         // Be användaren att ange en summa pengar i SEK.
         Console.WriteLine("Please enter amount in SEK you want to exchange:");
-        decimal inputCurrency = decimal.Parse(Console.ReadLine()!);
+        decimal inputAmount = decimal.Parse(Console.ReadLine()!);
 
         // Ange en lista över tillgängliga valutor (t.ex. EUR, GBP, JPY,USD).
         Console.WriteLine("Choose which currency you want to exchange to:");
@@ -25,24 +25,24 @@ class Program
         string chosenCurrency = (Console.ReadLine()!).ToUpper();
 
         // Använd en switch-sats för att hantera valutaomvandlingen.
-        decimal exchangeCurrency;
+        decimal exchangeValueCurrency;
         switch (chosenCurrency)
         // Utför omvandlingen med multiplikationsoperatorer och skriv gjutning vid behov.
             {
                 case "EUR":
-                    exchangeCurrency = inputCurrency * 0.092m;
+                    exchangeValueCurrency = inputAmount * 0.092m;
                     break;
                 
                 case "GBP":
-                    exchangeCurrency = inputCurrency * 0.079m;
+                    exchangeValueCurrency = inputAmount * 0.079m;
                     break;
                 
                 case "JPY":
-                    exchangeCurrency = inputCurrency * 15.7m;
+                    exchangeValueCurrency = inputAmount * 15.748m;
                     break;
 
                 case "USD":
-                    exchangeCurrency = inputCurrency * 0.099m;
+                    exchangeValueCurrency = inputAmount * 0.099m;
                     break;
                 
                 default:
@@ -50,8 +50,9 @@ class Program
                     return;
                 }
                 // Visa det konverterade beloppet.
-            Console.WriteLine($"Your currency {inputCurrency}SEK is {exchangeCurrency}{chosenCurrency}");
+            Console.WriteLine($"Your currency {inputAmount}SEK is {exchangeValueCurrency}{chosenCurrency}");
 
             Console.ReadLine();
+        
     }
 }
